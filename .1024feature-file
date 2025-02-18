@@ -1,0 +1,10 @@
+fileChangeLogs:
+  - index.html
+  - index.js
+  - bs-config.js
+  - '.1024'
+  - .git
+  - main.rb
+  - .1024nix
+  - README.md
+  - main.py

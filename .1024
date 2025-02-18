@@ -1,0 +1,2 @@
+components: ["filetree", "shell", "console"]
+run_command: "python3 main.py"
