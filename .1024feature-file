@@ -8,3 +8,7 @@ fileChangeLogs:
   - .1024nix
   - README.md
   - main.py
+  - .gitignore
+  - init.sql
+  - update_template.log
+  - config.json

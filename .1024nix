@@ -1,24 +1,11 @@
+# .1024nix is the NIX configuration file for the Clacky development environment, used to establish an isolated development environment with core dependencies and shellHook for configuring environment variables, aliases, and other shell configurations.
+# After modifying the file, you can execute the command 'nix-shell .1024nix' in the Terminal to apply the changes.
+# For more information, please refer to the documentation: https://docs.clacky.ai/clacky-workspace/configure
 { pkgs ? import <nixpkgs> {} }:
 pkgs.mkShell {
     shellHook = ''
         alias ll="ls -l"
-        export PS1="\[\e[0m\]\w\[\e[0m\]#\[\e[0m\] "
+        export PS1="\[[0m\]\w\[[0m\]#\[[0m\] "
         export LANG=en_US.UTF-8
-        export PIP_TARGET=$HOME/.cache/pip/site-packages
-        export PYTHONPATH=$PIP_TARGET:$PYTHONPATH
     '';
-    packages = [
-        # env
-        pkgs.python39Full
-        pkgs.python39Packages.pip
-        pkgs.python39Packages.django
-        pkgs.python39Packages.numpy
-        pkgs.python39Packages.pandas
-        pkgs.python39Packages.scipy
-        # unitTest
-        pkgs.python39Packages.pytest
-        # lsp
-        pkgs.python39Packages.python-lsp-server
-        pkgs.glibcLocales
-    ];
 }
